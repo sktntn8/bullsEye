@@ -15,10 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var backgrounImageView: UIImageView!
     @IBOutlet weak var targetLable: UILabel!
-    // just to change labels color color
-    @IBOutlet weak var targetTextLable: UILabel!
-    @IBOutlet weak var roundTextLabel: UILabel!
-    @IBOutlet weak var scoureTextLabel: UILabel!
+
     
     
     
@@ -70,26 +67,17 @@ class ViewController: UIViewController {
         roundLabel.text = "\(roundValue)"
         
     }
-    
-    
-    
+   
     
 }
 extension ViewController{
     
     func startNewRound() {
-        
 
-        backgrounImageView.isHidden = false
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
-        scoureLabel.textColor = .white
-        roundLabel.textColor = .white
-        scoureTextLabel.textColor = .white
-        roundTextLabel.textColor = .white
-        targetTextLable.textColor = .white
-        
+   
         
     }
     
@@ -101,12 +89,7 @@ extension ViewController{
         roundValue += 1
         scoureLabel.text = "\(scoure)"
         roundLabel.text = "\(roundValue)"
-        backgrounImageView.isHidden = true
-        scoureLabel.textColor = .black
-        roundLabel.textColor = .black
-        scoureTextLabel.textColor = .black
-        roundTextLabel.textColor = .black
-        targetTextLable.textColor = .black
+
         
         
         
