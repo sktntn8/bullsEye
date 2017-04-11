@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EADF9352F440969DCDEEB76528F73F851B403A3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0733410402434D58EEBFD899BE02C74D276BA79B" : 9223372036854775807,
+    "4EADF9352F440969DCDEEB76528F73F851B403A3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B38CE188-AF5C-4B03-9C09-1796ECB435A6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0733410402434D58EEBFD899BE02C74D276BA79B" : "..",
+    "4EADF9352F440969DCDEEB76528F73F851B403A3" : "bullsEye\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "bullsEye",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "bullsEye.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sktntn8\/geekFactory.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0733410402434D58EEBFD899BE02C74D276BA79B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sktntn8\/bullsEye.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EADF9352F440969DCDEEB76528F73F851B403A3"
+    }
+  ]
+}

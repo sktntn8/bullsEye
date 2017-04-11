@@ -35,18 +35,18 @@ class ViewController: UIViewController {
         slider.setThumbImage(image, for: .normal)
         slider.setMinimumTrackImage(UIImage(named: "SliderTrackLeft"), for: .normal)
         slider.setMaximumTrackImage(UIImage(named: "SliderTrackRight"), for: .normal)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func showAlert(_ sender: UIButton) {
         displayResult()
         
-    
+        
     }
     @IBOutlet weak var slider: UISlider!
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         print("the value of the slider is \(lroundf(sender.value))")
         currentValue = lroundf(sender.value)
-
+        
         
     }
     
@@ -70,10 +70,10 @@ class ViewController: UIViewController {
     
     
     
-
+    
 }
 extension ViewController{
-
+    
     func startNewRound() {
         backgrounImageView.isHidden = false
         targetValue = 1 + Int(arc4random_uniform(100))
@@ -84,8 +84,8 @@ extension ViewController{
         scoureTextLabel.textColor = .white
         roundTextLabel.textColor = .white
         targetTextLable.textColor = .white
-
-
+        
+        
     }
     
     func displayResult() {
@@ -109,16 +109,17 @@ extension ViewController{
         
         let action = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
             self.startNewRound()
-
+            
         })
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-
-   
+        
+        
     }
     
     func calculateTheDefference( target: Int , currentValue : Int) -> (Int , String){
+        
         let defferenceRsult = abs(target - currentValue)
         switch defferenceRsult {
         case 0 :
@@ -129,11 +130,11 @@ extension ViewController{
             return(10,"Pretty good!")
         default:
             return(0,"Not even close...")
-
+            
         }
     }
-
-
-
+    
+    
+    
 }
 
