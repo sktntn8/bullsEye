@@ -31,8 +31,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentValue = Int(slider.value)
         startNewRound()
-        let image = UIImage(named: "SliderThumb-Normal")
-        slider.setThumbImage(image, for: .normal)
+        slider.setThumbImage(UIImage(named : "SliderThumb-Highlighted"), for: .highlighted)
+
+        slider.setThumbImage(UIImage(named: "SliderThumb-Normal"), for: .normal)
+        
         slider.setMinimumTrackImage(UIImage(named: "SliderTrackLeft"), for: .normal)
         slider.setMaximumTrackImage(UIImage(named: "SliderTrackRight"), for: .normal)
         
@@ -51,6 +53,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     
     @IBAction func sliderMoved(_ sender: UISlider) {
+        
         
         
         print("the value of the slider is \(lroundf(sender.value))")
@@ -75,6 +78,8 @@ class ViewController: UIViewController {
 extension ViewController{
     
     func startNewRound() {
+        
+
         backgrounImageView.isHidden = false
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
