@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var backgrounImageView: UIImageView!
     @IBOutlet weak var targetLable: UILabel!
-
+    
     
     
     
@@ -26,14 +26,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentValue = Int(slider.value)
         startNewRound()
-        slider.setThumbImage(UIImage(named : "SliderThumb-Highlighted"), for: .highlighted)
-
-        slider.setThumbImage(UIImage(named: "SliderThumb-Normal"), for: .normal)
+        setSliderThumbs()
         
-        slider.setMinimumTrackImage(UIImage(named: "SliderTrackLeft"), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "SliderTrackRight"), for: .normal)
         
     }
     
@@ -53,7 +48,6 @@ class ViewController: UIViewController {
         
         
         
-        print("the value of the slider is \(lroundf(sender.value))")
         currentValue = lroundf(sender.value)
         
         
@@ -67,31 +61,28 @@ class ViewController: UIViewController {
         roundLabel.text = "\(roundValue)"
         
     }
-   
+    
     
 }
 extension ViewController{
     
     func startNewRound() {
-
+        
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
+        targetLable.text = "\(targetValue)"
         slider.value = Float(currentValue)
-   
+        
         
     }
     
     func displayResult() {
         
         let (incresedScore , userMessage) = calculateTheDefference(target: targetValue, currentValue: currentValue )
-        
         scoure = scoure + incresedScore
         roundValue += 1
         scoureLabel.text = "\(scoure)"
         roundLabel.text = "\(roundValue)"
-
-        
-        
         
         let alert = UIAlertController(title: userMessage, message: "You scoures \(scoure) points" + "\n Your value is \(currentValue)" + "\n your target is \(targetValue)", preferredStyle: .alert)
         
@@ -100,9 +91,7 @@ extension ViewController{
             
         })
         alert.addAction(action)
-        
         present(alert, animated: true, completion: nil)
-        
         
     }
     
@@ -117,9 +106,21 @@ extension ViewController{
         case 5..<10 :
             return(10,"Pretty good!")
         default:
-            return(0,"Not even close...")
+            return(0,"Not even close.")
             
         }
+    }
+    func setSliderThumbs(){
+        let edgInstens = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        
+        slider.setThumbImage(UIImage(named : "SliderThumb-Highlighted"), for: .highlighted)
+        
+        slider.setThumbImage(UIImage(named: "SliderThumb-Normal"), for: .normal)
+        
+        slider.setMinimumTrackImage(UIImage(named: "SliderTrackLeft")?
+            .resizableImage(withCapInsets: edgInstens ), for: .normal)
+        slider.setMaximumTrackImage(UIImage(named: "SliderTrackRight")?
+            .resizableImage(withCapInsets: edgInstens ), for: .normal)
     }
     
     
